@@ -110,7 +110,7 @@ DEPENDENCIES
   guard-bundler
   guard-rspec
   rake (~> 13.0)
-  rspec (~> 3.2)
+  rspec (~> 3.0)
   rubocop (~> 1.7)
   yard
 
