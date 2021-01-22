@@ -15,23 +15,23 @@ RSpec.describe Cultivos do
 			end
 
 			it "Se obtiene una cadena con la informacion del cultivo" do
-				expect(@c1.to_s).to eq("Nombre: Cultivo1, Emision de gases: 0.3, Terreno: 12, Precio: 0.7, Coste: 0.5)
+				expect(@c1.to_s).to eq("Nombre: Cultivo1, Emision de gases: 0.3, Terreno: 12, Precio: 0.7, Coste: 0.5")
 			end
 			
 			it "Obtener las emisiones de gases de efecto invernadero" do
-				expect(@c1.g).to eq(0.3)
+				expect(@c1.gas).to eq(0.3)
 			end
 
 			it "Obtener el terreno utilizado" do
-                                expect(@c1.t).to eq(12)
+                                expect(@c1.terreno).to eq(12)
                         end
 
 			it "Obtener el precio de venta" do
-                                expect(@c1.p).to eq(0.7)
+                                expect(@c1.precio).to eq(0.7)
                         end
 
 			it "Obtener el coste de produccion" do
-                                expect(@c1.c).to eq(0.5)
+                                expect(@c1.coste).to eq(0.5)
                         end
 		end
 	end
