@@ -13,4 +13,8 @@ class Cultivo
 		"Nombre: #{@nombre}, Emision de gases: #{@gas}, Terreno: #{@terreno}, Precio: #{@precio}, Coste: #{@coste}"
 	end
 
+    def relacion()
+       @terreno/@gas
+    end
+
 end

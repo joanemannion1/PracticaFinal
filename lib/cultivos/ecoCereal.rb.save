@@ -1,8 +1,8 @@
 require_relative "cultivo"
 
-class Cereal < Cultivo
+class EcoCereal < Cereal
 	include Comparable
-	attr_reader :tipo, :estacion, :densidad, :planta, :npmc, :pmg, :pg, :pu, :gl, :pml, :ds
+	er :tipo, :estacion, :densidad, :planta, :npmc, :pmg, :pg, :pu, :gl, :pml, :ds
 
 	def initialize(n,g,t,p,c,tip,e, npmc, pmg, pg, pu, gl, pml, ds)
 		super(n,g,t,p,c)
@@ -24,19 +24,6 @@ class Cereal < Cultivo
 		s
 	end
 
-    #Método para que sea enumerable la clase Fruta
-    def each
-        yield tipo
-        yield estacion
-        yield npmc
-        yield pmg
-        yield pg
-        yield pu
-        yield gl
-        yield pml
-        yield ds
-    end
-
 	def densidad()
 		return (@npmc * (@pmg / 100.0))/ (@pg * @pu * @gl)
 
@@ -45,10 +32,6 @@ class Cereal < Cultivo
 	def planta()
 		return ((@pml * 100.0) / @ds)
 	end
-
-    def relacion()
-       @terreno/@gas
-    end
 
 	def <=> other 
 		[@precio,@coste] <=> [other.precio, other.coste]

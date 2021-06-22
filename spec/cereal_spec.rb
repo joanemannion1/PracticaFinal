@@ -90,6 +90,7 @@ RSpec.describe Cultivos do
 				end
 
 				it "Calcular para todos los cereales de grano corto y estacion de siembra en otono el numero de plantas que se logran en una hectarea." do 
+					expect(@cereales.each do |p|; if p.tipo =="corto" && p.estacion == "o" then  puts ("#{p.npmc}"); end; end)
 					expect(@cereales.find_all {|p| p.tipo == "corto" && p.estacion == "o"}).to eq([@c1,@c3])
 				end
 			end
