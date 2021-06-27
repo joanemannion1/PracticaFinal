@@ -1,6 +1,9 @@
+
 require_relative "../lib/cultivos/cultivo"
 
-RSpec.describe Cultivos do
+include RSpec
+
+RSpec.describe Cultivo do
 	context Cultivo do
 		before (:each) do
 			@c1 =  Cultivo.new('Cultivo1', 0.3, 12, 0.7, 0.5)

@@ -1,6 +1,6 @@
 require_relative "../lib/cultivos/cereal"
 
-RSpec.describe Cultivos do
+RSpec.describe Cultivo do
         describe Cereal do
             before (:each) do
 			    @c1 = Cereal.new("Avena", 0.3, 12, 0.7, 0.5, "corto", "o", 380, 45, 0.94, 0.92, 0.75, 83, 20)
@@ -11,7 +11,7 @@ RSpec.describe Cultivos do
             end
             context "Crear un Cereal" do
                 it "instanciar una Cereal" do
-                        expect(@c2).not_to eq(nil)
+                        expect(@c1.precio).not_to eq(nil)
                 end
 
                 it "Obtener nombre de la Cereal" do
