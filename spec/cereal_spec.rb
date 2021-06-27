@@ -1,12 +1,12 @@
 require_relative "../lib/cultivos/cereal"
 
 RSpec.describe Cultivos do
-        context Cereal do
+        describe Cereal do
             before (:each) do
-			@c1 = Cereal.new("Avena", 0.3, 12, 0.7, 0.5, "corto", "o", 380, 45, 0.94, 0.92, 0.75, 83, 20)
-			@c2 = Cereal.new("Arroz", 0.3, 11, 0.8, 0.3, "largo", "v", 315, 42, 0.91, 0.93, 0.85, 96, 17)
-			@c3 = Cereal.new("Cebada", 0.1, 8, 0.3, 0.2, "corto", "o", 200, 40, 0.93, 0.99, 0.81, 90, 76)
-			@cereales = [@c1,@c2,@c3]
+			    @c1 = Cereal.new("Avena", 0.3, 12, 0.7, 0.5, "corto", "o", 380, 45, 0.94, 0.92, 0.75, 83, 20)
+			    @c2 = Cereal.new("Arroz", 0.3, 11, 0.8, 0.3, "largo", "v", 315, 42, 0.91, 0.93, 0.85, 96, 17)
+			    @c3 = Cereal.new("Cebada", 0.1, 8, 0.3, 0.2, "corto", "o", 200, 40, 0.93, 0.99, 0.81, 90, 76)
+			    @cereales = [@c1,@c2,@c3]
 
             end
             context "Crear un Cereal" do
