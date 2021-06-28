@@ -1,17 +1,18 @@
 require_relative "../lib/cultivos/ecoCereal"
 
-RSpec.describe Cultivos do
+RSpec.describe Cultivo do
         context EcoCereal do
             before (:each) do
                         @c1 = EcoCereal.new("Avena", 0.3, 12, 0.7, 0.5, "corto", "o", 380, 45, 0.94, 0.92, 0.75, 83, 20,0.53)
                         @c2 = EcoCereal.new("Arroz", 0.3, 11, 0.8, 0.3, "largo", "v", 315, 42, 0.91, 0.93, 0.85, 96, 17,0.59)
                         @c3 = EcoCereal.new("Cebada", 0.1, 8, 0.3, 0.2, "corto", "o", 200, 40, 0.93, 0.99, 0.81, 90, 76,0.61)
+                        @cereal = Cereal.new("Avena", 0.3, 12, 0.7, 0.5, "corto", "o", 380, 45, 0.94, 0.92, 0.75, 83, 20)
                         @EcoCereales = [@c1,@c2,@c3]
 
             end
             context "Crear un EcoCereal" do
                 it "instanciar una EcoCereal" do
-                        expect(@c2).not_to eq(nil)
+                        expect(@c1.precio).not_to eq(nil)
                 end
 
                 it "Obtener nombre de la EcoCereal" do
@@ -19,7 +20,7 @@ RSpec.describe Cultivos do
                 end
 
                 it "Obtener una cadena con la informacion de la EcoCereal" do
-                        expect(@c1.to_s).to eq("EcoCereal ->Nombre: Avena, Emision de gases: 0.3, Terreno: 12, Precio: 0.7, Coste: 0.5, tipo: corto, estacion: o")
+                        expect(@c1.to_s).to eq("EcoCereal ->Nombre: Avena, Emision de gases: 0.3, Terreno: 12, Precio: 0.7, Coste: 0.5, minerales: 0.53")
                 end
 
                 it "Obtener las emisiones de gases de efecto invernadero" do
@@ -47,7 +48,7 @@ RSpec.describe Cultivos do
                                 end
 
                                 it "Obtener el porcentaje de minerales totales" do
-                                        expect(@c1.minerales).to eq(0.59)
+                                        expect(@c1.minerales).to eq(0.53)
                                 end
 
                                 it "Sea clase cultivo" do
@@ -84,6 +85,10 @@ RSpec.describe Cultivos do
                                 it "EcoCereal es comparable precio de coste y venta" do
                                         expect(@c1 > @c3).to eq(true) 
                                 end
+
+                                it "Existe un metodo que devuelva la relacion entre las emisiones de CO2 y el coste de produccion de los mismos" do
+                                        expect(@c1.relacion).to eq(0.6) 
+                                end
                                 
                                 it "Calcular que EcoCereal tiene el coste de produccion y el precio de venta mas altos y sus valores." do
                                         expect(@EcoCereales.max).to eq(@c2)
@@ -98,6 +103,12 @@ RSpec.describe Cultivos do
                                 end
                         end
                 context "Programación orientada a objetos. Poliformismo. Modificación" do
+            it "Se debe poder esperar que una instancia de clase Cereal sea un Cereal" do
+                expect(@cereal.is_a?Cereal).to eq(true)
+            end
+            it "Se debe poder esperar que una instancia de clase EcoCereal sea un EcoCereal" do
+                expect(@c1.is_a?EcoCereal).to eq(true)
+            end
             it "Se debe poder esperar que una instancia de clase EcoCereal sea un objeto" do
                 expect(@c1.is_a?Object).to eq(true)
             end
@@ -119,7 +130,7 @@ RSpec.describe Cultivos do
             end
 
             it "Se debe poder enumerar una EcoCereal" do 
-                expect(@c1.relacion).to eq(0)
+                expect(@cereal.respond_to?(:each)).to eq(true)
             end
         end
 
