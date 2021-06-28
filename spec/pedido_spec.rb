@@ -33,5 +33,8 @@ RSpec.describe Cultivo do
         it "El pedido debe contar con una lista de especificaciones como atributo" do
             expect(@pedido.especificaciones).not_to be(nil)
         end 
+         it "Un pedido crea una cadena" do
+            expect(@pedido.to_s).not_to be(nil)
+        end
     end
 end
